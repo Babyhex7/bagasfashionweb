@@ -29,7 +29,6 @@
         }
         .left {
             flex: 1;
-            
             background: url('/src/koreanlogin.jpeg') no-repeat center center;
             background-size: cover;
             display: flex;
@@ -40,16 +39,6 @@
             font-size: 18px;
             font-weight: 600;
             text-align: center;
-        }
-        .left::after {
-            content: "";
-            position: absolute;
-            bottom: 10;
-            top: 40;
-            left: 49;
-            width: 30%;
-            height: 60%;
-            background: linear-gradient(to top, rgba(63, 62, 62, 0.7), rgba(28, 28, 28, 0));
         }
         .right {
             flex: 1;
@@ -82,14 +71,14 @@
         .btn {
             width: 100%;
             padding: 10px;
-            background: #17a2b8;
+            background: black;
             color: white;
             border: none;
             border-radius: 8px;
             cursor: pointer;
         }
         .btn:hover {
-            background: #138496;
+            background: #333;
         }
         .toggle-link {
             text-align: center;
@@ -110,7 +99,7 @@
         <div class="right">
             <div id="loginForm">
                 <h2>Login</h2>
-                <form onsubmit="return handleSubmit(event, 'tugasweb.html')">
+                <form onsubmit="return handleSubmit(event, 'main.html')">
                     <div class="input-group">
                         <label>Email:</label>
                         <input type="email" required>
@@ -127,12 +116,19 @@
 
             <div id="registerForm" style="display: none;">
                 <h2>Register</h2>
-                <form onsubmit="return handleSubmit(event, 'tugasweb.html')">
+                <form onsubmit="return handleSubmit(event, 'main.html')">
+                    <div class="input-group">
+                        <label>Nama:</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Alamat:</label>
+                        <input type="text" required>
+                    </div>
                     <div class="input-group">
                         <label>Email:</label>
                         <input type="email" required>
                     </div>
-                    
                     <div class="input-group" style="position: relative;">
                         <label>Password:</label>
                         <input type="password" id="registerPassword" required>
