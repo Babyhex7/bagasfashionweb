@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f2f5;
+        }
+        .container {
+            display: flex;
+            width: 800px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .left {
+            flex: 1;
+            
+            background: url('/src/koreanlogin.jpeg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .left::after {
+            content: "";
+            position: absolute;
+            bottom: 10;
+            top: 40;
+            left: 49;
+            width: 30%;
+            height: 60%;
+            background: linear-gradient(to top, rgba(63, 62, 62, 0.7), rgba(28, 28, 28, 0));
+        }
+        .right {
+            flex: 1;
+            padding: 40px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .toggle-password {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 38px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #17a2b8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #138496;
+        }
+        .toggle-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .toggle-link a {
+            color: #17a2b8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <p>Welcome Back! Please log in using your personal information.</p>
+        </div>
+
+        <div class="right">
+            <div id="loginForm">
+                <h2>Login</h2>
+                <form onsubmit="return handleSubmit(event, 'tugasweb.html')">
+                    <div class="input-group">
+                        <label>Email:</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="input-group" style="position: relative;">
+                        <label>Password:</label>
+                        <input type="password" id="loginPassword" required>
+                        <span class="toggle-password" onclick="togglePassword('loginPassword')">👁️</span>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <p class="toggle-link">Belum punya akun? <a href="#" onclick="toggleForms()">Daftar</a></p>
+            </div>
+
+            <div id="registerForm" style="display: none;">
+                <h2>Register</h2>
+                <form onsubmit="return handleSubmit(event, 'tugasweb.html')">
+                    <div class="input-group">
+                        <label>Email:</label>
+                        <input type="email" required>
+                    </div>
+                    
+                    <div class="input-group" style="position: relative;">
+                        <label>Password:</label>
+                        <input type="password" id="registerPassword" required>
+                        <span class="toggle-password" onclick="togglePassword('registerPassword')">👁️</span>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                </form>
+                <p class="toggle-link">Sudah punya akun? <a href="#" onclick="toggleForms()">Login</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleForms() {
+            let loginForm = document.getElementById("loginForm");
+            let registerForm = document.getElementById("registerForm");
+            loginForm.style.display = loginForm.style.display === "none" ? "block" : "none";
+            registerForm.style.display = registerForm.style.display === "none" ? "block" : "none";
+        }
+
+        function togglePassword(fieldId) {
+            let field = document.getElementById(fieldId);
+            field.type = field.type === "password" ? "text" : "password";
+        }
+
+        function handleSubmit(event, url) {
+            event.preventDefault();
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

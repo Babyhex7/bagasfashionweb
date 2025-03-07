@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-StyLabs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- SwiperJS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+     body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem 1rem 2rem;
+    
+    border-bottom: 1px solid #e5e7eb;
+}
+.logo {
+    font-size: 2.25rem;
+    font-weight: bold;
+    font-style: italic;
+}
+.logo span {
+    font-style: normal;
+    font-size: 2.25rem;
+}
+.top_bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+}
+.top_bar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.125rem;
+}
+.top_bar a:hover {
+    text-decoration: underline;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.search-bar input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+    width: 500px;
+    height: 30px;
+    margin-right: 150px;
+    outline: none;  
+    transition: border-color 0.5s ease-in-out;
+    margin-right: 15rem;
+
+}
+.search-bar input:focus {
+    border-color: #a9585811;
+    box-shadow: 0 0 0 2px rgba(1, 7, 18, 0.3);
+    
+}
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
+}
+.icons i {
+    font-size: 1.2rem;
+    color: gray;
+    cursor: pointer;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    font-size: 1.125rem;
+}
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+nav a:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem;
+    margin-top: -2rem;
+}
+
+.text h1 {
+    position: relative;
+    font-style: italic;
+    font-size: 4rem;
+    margin-bottom: 5rem;
+    text-align: left;
+    max-width: 9999px;
+    overflow: hidden;
+    font-weight: normal;
+    z-index: 4;
+    
+    
+}
+.text h1 span {
+    font-size: 3rem;
+    font-style: italic;
+}
+.cta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 15rem;
+}
+.cta button {
+    background-color: black;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.stats {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+
+}
+.stats span {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin: 0;
+}
+.stats p {
+    font-size: 1.5rem;
+    color:  gray;
+    margin-bottom: 1rem;
+    margin: 0;
+}
+.image-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+.image-container img {
+    border-radius: 1rem;
+    width: 17rem;
+    height: 22rem;
+    object-fit: cover;
+    box-shadow: 2px 5px 10px rgba(10, 10, 10, 0.1);
+    
+}
+    
+.image-container .image-2 {
+    position: relative;
+    left: -5rem;
+    top: -30px;
+    z-index: 3;
+   
+ 
+
+}
+.image-container .image-1{
+    position: relative;
+    top: 7rem;
+
+    z-index: 2;
+
+    right: 9rem;
+
+
+}
+
+ /* Carousel */
+ .carousel-container {
+     display: flex;
+     margin: 50px auto;
+     max-width: 90%;
+     padding: 20px;
+     text-align: center;
+   
+ }
+ .swiper {
+     width: 100%;
+     padding: 20px 0;
+ }
+ .swiper-slide {
+     display: flex;
+     justify-content: center;
+     flex-direction: row;
+ }
+ .swiper-wrapper {
+     display: flex;
+     justify-content: center;
+     flex-direction: row;
+     gap: 1rem;
+     height: auto;
+     
+
+ }
+ .card {
+     background: #fff;
+     border-radius: 15px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     padding: 15px;
+     width: 200px;
+     height: 300px;
+     text-align: center;
+ }
+ .card img {
+     width: 100%;
+     border-radius: 20px;
+ }
+ .card h3 {
+     font-size: 1.2rem;
+     margin: 10px 0;
+ }
+ .card p {
+     font-size: 1rem;
+     color: gray;
+ }
+    
+
+
+ /* carousel  */
+ .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 1rem;
+            overflow-x: auto;
+            padding: 10px;
+            overflow-x: auto;
+         
+        }
+        .carousel button {
+            font-size: 24px;
+            padding: 10px;
+            border: none;
+            background-color: #fffdfd;
+            cursor: pointer;
+            outline: none;
+            border-radius: 50%;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .carousel button:hover {
+            background-color: #d0d0d0;
+        }
+        .cards-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 5px;
+            scroll-behavior: smooth;
+
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            flex-shrink: 0;
+            overflow: wrap;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+            height: 350px;
+
+        }
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 2px;
+            text-align: start;
+            display: flex;
+            flex-direction: column;
+        
+
+        }
+        .card h2 {
+            font-size: 1rem;
+            margin-right: 5px;
+            font-weight: bold;
+            right: 10px;
+            text-align: start;
+            max-width: 190px;
+            word-wrap: break-word;
+        
+        }
+        .card p {
+            color: gray;
+            margin: 5px 0;
+        }
+        .favorite {
+            font-size: 22px;
+            color: gray;
+            cursor: pointer;
+            float: right;
+            margin-right: 10px;
+            transition: color 0.3s ease-in-out;
+            position: relative;
+            top: -75px;
+            right: -190px;
+        }
+        .favorite:hover {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo">
+            k-<span>StyLabs</span>
+        </div>
+        <div class="search-container">
+            <div class="search-bar">
+                <input type="text" placeholder="Search your own style">
+            </div>
+            <div class="top_bar">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+            </div>
+            <div class="icons">
+                <i class="fas fa-user" onclick="window.location.href='form.html'"></i>
+                <i class="fas fa-heart"></i>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="#">Korean Clothes</a>
+        <a href="#">Accessories</a>
+        <a href="#">Fashion Tips</a>
+        <a href="#">Customize</a>
+    </nav>
+
+    <div class="content">
+        <div class="text">
+            <h1>Matched Your Korean Fashion <span class="highlight" style="font-weight: bold;">at K-StyLabs</span></h1>
+    
+            <div class="cta">
+                <button>Get Started</button>
+                <div class="stats">
+                    <span>70+</span>
+                    <p>Fashion Style</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="image-container">
+            <img class="image-1" src="https://storage.googleapis.com/a1aa/image/h4Ftt_j5XWcb9cbICmrUlF9u2wJABeKDdVUSsBv47W4.jpg" 
+                 alt="A woman with dark hair and red lipstick, wearing a gold outfit and earrings">
+            <img  class ='image-2'src="https://storage.googleapis.com/a1aa/image/h4Ftt_j5XWcb9cbICmrUlF9u2wJABeKDdVUSsBv47W4.jpg" 
+                 alt="A woman with dark hair and red lipstick, wearing a gold outfit and earrings">
+        </div>
+
+        
+    </div>
+
+    <!-- carousel -->
+    <h2 style="display: flex; justify-content: center; margin-top: 9rem ; font-size: 2.5rem;">What's Hot This Week!</h2>
+
+        <div class="carousel">
+            <button id="prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="https://storage.googleapis.com/a1aa/image/z5E59vgNaz9JQSc3OJOSUyzjOn3_YhWSCAbReRZcAoc.jpg" alt="Product">
+                    <div class="card-content">
+                        <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
+                        <p>US$30.52</p>
+                        <i class="far fa-heart favorite"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://storage.googleapis.com/a1aa/image/z5E59vgNaz9JQSc3OJOSUyzjOn3_YhWSCAbReRZcAoc.jpg" alt="Product">
+                    <div class="card-content">
+
+                        <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
+                        <p>US$30.52</p>
+                        <i class="far fa-heart favorite"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://storage.googleapis.com/a1aa/image/z5E59vgNaz9JQSc3OJOSUyzjOn3_YhWSCAbReRZcAoc.jpg" alt="Product">
+                    <div class="card-content">
+                        <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
+                        <p>US$30.52</p>
+                        <i class="far fa-heart favorite"></i>
+                    </div>
+                </div>
+            </div>
+            <button id="next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        
+       
+    </div>
+</div>
+
+</div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+   document.addEventListener('DOMContentLoaded', function()  { 
+     const prev = document.querySelector('#prev');
+     const next = document.querySelector('#next');
+     const cardsContainer = document.querySelector('.cards-container');
+
+     let scrollAmount = 0;
+     let cardWidth = cardsContainer.querySelector('.card').offsetWidth + 16;
+     next.addEventListener('click', () => {
+         cardsContainer.scrollBy({
+             left: cardWidth,
+             behavior: 'smooth'
+         })
+     })
+     prev.addEventListener('click', () => {
+         cardsContainer.scrollBy({
+             left: -cardWidth,
+             behavior: 'smooth'
+         })
+         })
+
+   })
+
+</script>
+
+
+</html>
